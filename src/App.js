@@ -7,7 +7,8 @@ import { useEffect, useState } from "react";
 
 function App() {
   const { event, user } = qs.parse(window.location.search);
-  const pollingRate = 30000;
+  const pollingRate = 10000;
+  const [flightEvent, setFlightEvent] = useState(0);
   const [lastEventId, setLastEventId] = useState(0);
   const [heading, setHeading] = useState(0);
   const [url, setUrl] = useState("");
@@ -32,6 +33,7 @@ function App() {
       id,
       heading,
     } = data;
+    console.log("🚀 ~ file: App.js ~ line 35 ~ setFlightData ~ id", id);
     const altForMeteo = escape(getAltitudeInMeters(altitude));
 
     const [long, lat] = coordinates;
@@ -81,6 +83,7 @@ function App() {
     const { data } = await getSimAirFlights(user);
     if (data.length) {
       const { flightId } = data[0];
+      setFlightEvent(flightId);
       triggerDataFetch(flightId, lastEventId);
     }
   };
@@ -97,10 +100,10 @@ function App() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      triggerDataFetch(event, lastEventId);
+      triggerDataFetch(flightEvent, lastEventId);
     }, pollingRate);
     return () => clearInterval(interval);
-  }, [lastEventId]);
+  }, [lastEventId, flightEvent]);
 
   return (
     <div>
