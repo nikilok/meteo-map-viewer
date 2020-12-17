@@ -45,3 +45,7 @@ This should enable automatic flight tracking with weather at the altitude your f
   https://api.simair.io/v1/flights/3335/events?lastEventId=445908
 - The number right after the flights/ is the event id.
 - In this case 3335, copy this event and use it to start this application when running it locally as http://localhost:3000/?event=3335
+
+### More Info
+
+https://forums.flightsimulator.com/t/msfs-cannonball-run-challenge-kjfk-to-klax-in-a-ga-plane-for-charity-prize-from-microsoft/325268/732?u=noksx
