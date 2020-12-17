@@ -1,6 +1,7 @@
 import axios from "axios";
 import axiosRetry from "axios-retry";
 import qs from "query-string";
+import "./App.css";
 
 import { useEffect, useState } from "react";
 
@@ -8,6 +9,7 @@ function App() {
   const { event } = qs.parse(window.location.search);
   const pollingRate = 30000;
   const [lastEventId, setLastEventId] = useState(0);
+  const [heading, setHeading] = useState(0);
   const [url, setUrl] = useState("");
   axiosRetry(axios, { retries: 3 });
 
@@ -22,11 +24,13 @@ function App() {
       location: { coordinates },
       altitude,
       id,
+      heading,
     } = data;
     const altForMeteo = escape(getAltitudeInMeters(altitude));
 
     const [long, lat] = coordinates;
     setLastEventId(id);
+    setHeading(heading);
     setUrl(
       `https://www.meteoblue.com/en/weather/webmap/beta/bad-kreuznach_germany_2953416#coords=10/${lat}/${long}&map=windAnimation~coldwarm~auto~${altForMeteo}~none`
     );
@@ -79,7 +83,11 @@ function App() {
   }, [lastEventId]);
 
   return (
-    <div className="App">
+    <div>
+      <div
+        className="aircraft"
+        style={{ transform: `rotate(${heading}deg)` }}
+      ></div>
       <iframe
         src={url}
         frameBorder="0"

@@ -1,0 +1,10 @@
+.aircraft {
+  width: 30px;
+  height: 30px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  background-image: url("gps-1.png");
+  background-size: contain;
+  z-index: 9999;
+}
