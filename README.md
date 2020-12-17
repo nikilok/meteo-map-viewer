@@ -10,6 +10,11 @@ In the project directory, you can run:
 
 You will need to install [yarn](https://classic.yarnpkg.com/en/docs/install/#windows-stable).
 
+You will need to install this chrome extension that helps with allows CORS(Cross Origin Requests) for now to access event data from SimAir.
+https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?hl=en
+
+After you restart Chrome, you will need to click the extension and Toggle it on.
+
 Open the command line and run
 
 ### Clone this repo locally
