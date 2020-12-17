@@ -23,7 +23,7 @@ function App() {
       altitude,
       id,
     } = data;
-    const altForMeteo = getAltitudeInMeters(altitude);
+    const altForMeteo = escape(getAltitudeInMeters(altitude));
 
     const [long, lat] = coordinates;
     setLastEventId(id);
@@ -37,21 +37,21 @@ function App() {
 
     switch (true) {
       case altMeters <= 10:
-        return escape("10 m above gnd");
+        return "10 m above gnd";
       case altMeters <= 128:
-        return escape("128 m above gnd");
+        return "128 m above gnd";
       case altMeters <= 210:
-        return escape("210 m above gnd");
+        return "210 m above gnd";
       case altMeters <= 250:
-        return escape("250 mb");
+        return "250 mb";
       case altMeters <= 307:
-        return escape("307 m above gnd");
+        return "307 m above gnd";
       case altMeters <= 500:
-        return escape("500 mb");
+        return "500 mb";
       case altMeters <= 700:
-        return escape("700 mb");
+        return "700 mb";
       case altMeters <= 850:
-        return escape("850 mb");
+        return "850 mb";
       default:
         return "";
     }
