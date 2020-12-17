@@ -6,7 +6,7 @@ import "./App.css";
 import { useEffect, useState } from "react";
 
 function App() {
-  const { event } = qs.parse(window.location.search);
+  const { event, user } = qs.parse(window.location.search);
   const pollingRate = 30000;
   const [lastEventId, setLastEventId] = useState(0);
   const [heading, setHeading] = useState(0);
@@ -16,6 +16,12 @@ function App() {
   const getSimAirEvent = (eventId, id) => {
     return axios.get(
       `https://api.simair.io/v1/flights/${eventId}/events?lastEventId=${id}`
+    );
+  };
+
+  const getSimAirFlights = (userAccount) => {
+    return axios.get(
+      `https://api.simair.io/v1/user/${userAccount}/flights?order=descending&count=1&lastFlightId=0`
     );
   };
 
@@ -71,8 +77,22 @@ function App() {
     }
   };
 
+  const getEventByUser = async (user) => {
+    const { data } = await getSimAirFlights(user);
+    if (data.length) {
+      const { flightId } = data[0];
+      triggerDataFetch(flightId, lastEventId);
+    }
+  };
+
   useEffect(() => {
-    triggerDataFetch(event, lastEventId);
+    if (user) {
+      getEventByUser(user);
+    }
+
+    if (event) {
+      triggerDataFetch(event, lastEventId);
+    }
   }, []);
 
   useEffect(() => {
