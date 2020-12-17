@@ -2,11 +2,10 @@ import axios from "axios";
 import axiosRetry from "axios-retry";
 import qs from "query-string";
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
   const { event } = qs.parse(window.location.search);
-  const iFrameRef = useRef(null);
   const pollingRate = 30000;
   const [lastEventId, setLastEventId] = useState(0);
   const [url, setUrl] = useState("");
@@ -62,9 +61,15 @@ function App() {
     if (event) {
       const { data } = await getSimAirEvent(event, lastEventId);
       const lastEvent = data.length - 1;
-      setFlightData(data[lastEvent]);
+      if (data.length) {
+        setFlightData(data[lastEvent]);
+      }
     }
   };
+
+  useEffect(() => {
+    triggerDataFetch(event, lastEventId);
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -76,7 +81,6 @@ function App() {
   return (
     <div className="App">
       <iframe
-        ref={iFrameRef}
         src={url}
         frameBorder="0"
         style={{ overflow: "hidden", height: "100vh", width: "100%" }}
