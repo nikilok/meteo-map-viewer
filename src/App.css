@@ -7,4 +7,5 @@
   background-image: url("airplane.png");
   background-size: contain;
   z-index: 9999;
+  transition: 0.3s;
 }
