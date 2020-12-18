@@ -33,14 +33,13 @@ function App() {
       id,
       heading,
     } = data;
-    console.log("🚀 ~ file: App.js ~ line 35 ~ setFlightData ~ id", id);
     const altForMeteo = escape(getAltitudeInMeters(altitude));
 
     const [long, lat] = coordinates;
     setLastEventId(id);
     setHeading(heading);
     setUrl(
-      `https://www.meteoblue.com/en/weather/webmap/beta/bad-kreuznach_germany_2953416#coords=10/${lat}/${long}&map=windAnimation~coldwarm~auto~${altForMeteo}~none`
+      `https://www.meteoblue.com/en/weather/webmap/beta/bad-kreuznach_germany_2953416#coords=13/${lat}/${long}&map=windAnimation~coldwarm~auto~${altForMeteo}~none`
     );
   };
 
