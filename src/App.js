@@ -1,12 +1,15 @@
 import axios from "axios";
 import axiosRetry from "axios-retry";
 import qs from "query-string";
+import altMeteo from "./data/altMeteo.json";
 import "./App.css";
 
 import { useEffect, useState } from "react";
 
 function App() {
-  const { event, user } = qs.parse(window.location.search);
+  const { event, user, map = "windAnimation~coldwarm" } = qs.parse(
+    window.location.search
+  );
   const pollingRate = 10000;
   const [flightEvent, setFlightEvent] = useState(0);
   const [lastEventId, setLastEventId] = useState(0);
@@ -39,33 +42,16 @@ function App() {
     setLastEventId(id);
     setHeading(heading);
     setUrl(
-      `https://www.meteoblue.com/en/weather/webmap/beta/bad-kreuznach_germany_2953416#coords=13/${lat}/${long}&map=windAnimation~coldwarm~auto~${altForMeteo}~none`
+      `https://www.meteoblue.com/en/weather/webmap/beta/bad-kreuznach_germany_2953416#coords=13/${lat}/${long}&map=${map}~auto~${altForMeteo}~none`
     );
   };
 
   const getAltitudeInMeters = (altitude) => {
     const altMeters = altitude * 0.3048;
-
-    switch (true) {
-      case altMeters <= 10:
-        return "10 m above gnd";
-      case altMeters <= 128:
-        return "128 m above gnd";
-      case altMeters <= 210:
-        return "210 m above gnd";
-      case altMeters <= 250:
-        return "250 mb";
-      case altMeters <= 307:
-        return "307 m above gnd";
-      case altMeters <= 500:
-        return "500 mb";
-      case altMeters <= 700:
-        return "700 mb";
-      case altMeters <= 850:
-        return "850 mb";
-      default:
-        return "";
-    }
+    const { str } = altMeteo
+      .filter(({ mapType }) => mapType.includes(map))
+      .find(({ alt }) => alt >= altMeters);
+    return str;
   };
 
   const triggerDataFetch = async (event, lastEventId) => {

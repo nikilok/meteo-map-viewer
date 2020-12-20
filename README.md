@@ -45,6 +45,15 @@ The app will automatically fetch your latest flight and display it.
 
 This should enable automatic flight tracking with weather at the altitude your flying at.
 
+**Optional map type inputs**
+Open [http://localhost:3000?user=useraccount&map=wind~hourly](http://localhost:3000?user=useraccount&map=wind~hourly) to get aircraft altitude plotted to the specific wind map type.
+
+You could use the following map types for the map parameter in the url
+
+- windAnimation~coldwarm (default)
+- windAnimation~rainbow
+- wind~hourly
+
 ### More Info
 
 https://forums.flightsimulator.com/t/msfs-cannonball-run-challenge-kjfk-to-klax-in-a-ga-plane-for-charity-prize-from-microsoft/325268/732?u=noksx
