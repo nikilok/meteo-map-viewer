@@ -48,10 +48,11 @@ function App() {
 
   const getAltitudeInMeters = (altitude) => {
     const altMeters = altitude * 0.3048;
-    const { str } = altMeteo
+    const meteoAltStr = altMeteo
       .filter(({ mapType }) => mapType.includes(map))
       .find(({ alt }) => alt >= altMeters);
-    return str;
+
+    return meteoAltStr ? meteoAltStr.str : "";
   };
 
   const triggerDataFetch = async (event, lastEventId) => {
