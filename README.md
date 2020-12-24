@@ -53,6 +53,7 @@ You could use the following map types for the map parameter in the url
 - windAnimation~coldwarm (default)
 - windAnimation~rainbow
 - wind~hourly
+- cloudsAndPrecipitation~hourly
 
 ### More Info
 

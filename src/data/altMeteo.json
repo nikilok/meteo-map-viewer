@@ -2,16 +2,32 @@
   {
     "alt": 10,
     "str": "10 m above gnd",
-    "mapType": ["windAnimation~coldwarm", "wind~hourly"]
+    "mapType": [
+      "windAnimation~coldwarm",
+      "wind~hourly",
+      "cloudsAndPrecipitation~hourly"
+    ]
   },
-  { "alt": 80, "str": "80 m above gnd", "mapType": ["wind~hourly"] },
+  {
+    "alt": 80,
+    "str": "80 m above gnd",
+    "mapType": ["wind~hourly", "cloudsAndPrecipitation~hourly"]
+  },
   {
     "alt": 128,
     "str": "128 m above gnd",
     "mapType": ["windAnimation~coldwarm"]
   },
-  { "alt": 150, "str": "150 mb", "mapType": ["wind~hourly"] },
-  { "alt": 200, "str": "200 mb", "mapType": ["wind~hourly"] },
+  {
+    "alt": 150,
+    "str": "150 mb",
+    "mapType": ["wind~hourly", "cloudsAndPrecipitation~hourly"]
+  },
+  {
+    "alt": 200,
+    "str": "200 mb",
+    "mapType": ["wind~hourly", "cloudsAndPrecipitation~hourly"]
+  },
   {
     "alt": 210,
     "str": "210 m above gnd",
@@ -20,35 +36,87 @@
   {
     "alt": 250,
     "str": "250 mb",
-    "mapType": ["windAnimation~coldwarm", "wind~hourly"]
+    "mapType": [
+      "windAnimation~coldwarm",
+      "wind~hourly",
+      "cloudsAndPrecipitation~hourly"
+    ]
   },
-  { "alt": 300, "str": "300 mb", "mapType": ["wind~hourly"] },
+  {
+    "alt": 300,
+    "str": "300 mb",
+    "mapType": ["wind~hourly", "cloudsAndPrecipitation~hourly"]
+  },
   {
     "alt": 307,
     "str": "307 m above gnd",
     "mapType": ["windAnimation~coldwarm"]
   },
-  { "alt": 400, "str": "400 mb", "mapType": ["wind~hourly"] },
+  {
+    "alt": 400,
+    "str": "400 mb",
+    "mapType": ["wind~hourly", "cloudsAndPrecipitation~hourly"]
+  },
   {
     "alt": 500,
     "str": "500 mb",
-    "mapType": ["windAnimation~coldwarm", "wind~hourly"]
+    "mapType": [
+      "windAnimation~coldwarm",
+      "wind~hourly",
+      "cloudsAndPrecipitation~hourly"
+    ]
   },
-  { "alt": 600, "str": "600 mb", "mapType": ["wind~hourly"] },
+  {
+    "alt": 600,
+    "str": "600 mb",
+    "mapType": ["wind~hourly", "cloudsAndPrecipitation~hourly"]
+  },
   {
     "alt": 700,
     "str": "700 mb",
-    "mapType": ["windAnimation~coldwarm", "wind~hourly"]
+    "mapType": [
+      "windAnimation~coldwarm",
+      "wind~hourly",
+      "cloudsAndPrecipitation~hourly"
+    ]
   },
-  { "alt": 750, "str": "750 mb", "mapType": ["wind~hourly"] },
-  { "alt": 800, "str": "800 mb", "mapType": ["wind~hourly"] },
+  {
+    "alt": 750,
+    "str": "750 mb",
+    "mapType": ["wind~hourly", "cloudsAndPrecipitation~hourly"]
+  },
+  {
+    "alt": 800,
+    "str": "800 mb",
+    "mapType": ["wind~hourly", "cloudsAndPrecipitation~hourly"]
+  },
   {
     "alt": 850,
     "str": "850 mb",
-    "mapType": ["windAnimation~coldwarm", "wind~hourly"]
+    "mapType": [
+      "windAnimation~coldwarm",
+      "wind~hourly",
+      "cloudsAndPrecipitation~hourly"
+    ]
   },
-  { "alt": 900, "str": "900 mb", "mapType": ["wind~hourly"] },
-  { "alt": 925, "str": "925 mb", "mapType": ["wind~hourly"] },
-  { "alt": 950, "str": "950 mb", "mapType": ["wind~hourly"] },
-  { "alt": 975, "str": "975 mb", "mapType": ["wind~hourly"] }
+  {
+    "alt": 900,
+    "str": "900 mb",
+    "mapType": ["wind~hourly", "cloudsAndPrecipitation~hourly"]
+  },
+  {
+    "alt": 925,
+    "str": "925 mb",
+    "mapType": ["wind~hourly", "cloudsAndPrecipitation~hourly"]
+  },
+  {
+    "alt": 950,
+    "str": "950 mb",
+    "mapType": ["wind~hourly", "cloudsAndPrecipitation~hourly"]
+  },
+  {
+    "alt": 975,
+    "str": "975 mb",
+    "mapType": ["wind~hourly", "cloudsAndPrecipitation~hourly"]
+  }
 ]
