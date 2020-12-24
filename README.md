@@ -26,9 +26,9 @@ Open the command line and run
 
 ### Clone this repo locally
 
-- Open your command line
+- Open your command line (Windows start -> Command Prompt)
 - git clone https://github.com/nikilok/meteo-map-viewer.git
-- navigate to the folder and install packages using `yarn`
+- navigate to the folder (`cd <path/to/repo>`) and install packages using `yarn`
 
 ### Install all packages typing in `yarn`
 
