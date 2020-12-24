@@ -45,6 +45,13 @@ The app will automatically fetch your latest flight and display it.
 
 This should enable automatic flight tracking with weather at the altitude your flying at.
 
+### How to get rid of the Meteo blue cookies dialog.
+
+- Right click your browser and select "Inspect / Inspect Element".
+- Find the items that says `class="gdpr_message"`
+- Right click that item and select "Delete element" (or) simply select the item and hit delete on your keyboard.
+- You can now close the Inspect tool and view your simulated aircraft on the meteoblue page.
+
 **Optional map type inputs**
 Open [http://localhost:3000?user=useraccount&map=wind~hourly](http://localhost:3000?user=useraccount&map=wind~hourly) to get aircraft altitude plotted to the specific wind map type.
 
